@@ -34,6 +34,7 @@ class FilmReader {
 		$apikey = "bb78e4cf3442e302d928f2c5edcdbee1";
                 $kurl = parse_url($url);
                 $tag = str_replace('/title/', '', $kurl['path']);
+                $tag = str_replace('/', '', $tag);
 $movie = file_get_contents('http://www.omdbapi.com/?apikey=a17e5208&i='.urlencode($tag));
 $movie = json_decode($movie, true);
 $cm = curl_init();
